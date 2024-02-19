@@ -5,9 +5,9 @@ class ToysDog extends DogProduct{
     public $material;
     public $durability;
     public $price;
-    function __construct($id,$type,string $Toys_name, string $material, string $durability,float $price)
+    function __construct($id,$type,$image,string $Toys_name, string $material, string $durability,float $price)
     {
-        parent::__construct($id, $type);
+        parent::__construct($id, $type,$image);
         $this->Toys_name =  $Toys_name;
         $this->material =  $material;
         $this->durability = $durability;

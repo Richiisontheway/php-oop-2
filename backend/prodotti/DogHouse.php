@@ -4,9 +4,9 @@ class DogHouse extends CatProduct{
     public $width;
     public $height;
     public $price;
-    function __construct($id,$type, int $width, int $height,float $price)
+    function __construct($id,$type,$image, int $width, int $height,float $price)
     {
-        parent::__construct($id, $type);
+        parent::__construct($id, $type, $image);
         $this->width =  $width;
         $this->height = $height;
         $this->price = $price;

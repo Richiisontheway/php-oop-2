@@ -2,14 +2,16 @@
 class Product {
     protected $id;
     public $type; // se cibo, cuccia o giochi
-
+    public $image;
     function __construct
     (
         int $id,
-        string $type
+        string $type,
+        string $image
     )
     {
         $this->id = $id;
+        $this->image = $image;
         $this->type = $type;
 
     }
