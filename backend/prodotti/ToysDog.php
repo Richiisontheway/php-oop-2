@@ -1,6 +1,6 @@
 <?php
-//require __DIR__ . './CatProduct.php';
-class ToysCat extends CatProduct{
+
+class ToysDog extends DogProduct{
     public $Toys_name;
     public $material;
     public $durability;
