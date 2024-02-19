@@ -1,7 +1,7 @@
 <?php
 class Product {
     protected $id;
-    private $type; // se cibo, cuccia o giochi
+    public $type; // se cibo, cuccia o giochi
 
     function __construct
     (

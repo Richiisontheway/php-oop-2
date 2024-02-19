@@ -3,19 +3,19 @@
 class DogHouse extends CatProduct{
     public $width;
     public $height;
-    public $priceHouse;
-    function __construct($id,$name,$price,$type, int $width, int $height,float $priceHouse)
+    public $price;
+    function __construct($id,$type, int $width, int $height,float $price)
     {
-        parent::__construct($id ,$name, $price, $type);
+        parent::__construct($id, $type);
         $this->width =  $width;
         $this->height = $height;
-        $this->priceHouse = $priceHouse;
+        $this->price = $price;
     }
     function get_info(){
         parent::get_info();
         return 
         'Altezza Cuccia: ' .$this->height. '<br>' .
         'Larghezza Cuccia: ' .$this->width. '<br>' .
-        'Prezzo della cuccia' .$this->priceHouse. '€' . '<br>';
+        'Prezzo della cuccia' .$this->price. '€' . '<br>';
     }
 }

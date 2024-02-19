@@ -4,9 +4,9 @@ class ToysCat extends CatProduct{
     public $Toys_name;
     public $material;
     public $durability;
-    function __construct($id,$name,$price,$type,string $Toys_name, string $material, string $durability)
+    function __construct($id,$type,string $Toys_name, string $material, string $durability)
     {
-        parent::__construct($id,$name,$price,$type);
+        parent::__construct($id,$type);
         $this->Toys_name =  $Toys_name;
         $this->material =  $material;
         $this->durability = $durability;
