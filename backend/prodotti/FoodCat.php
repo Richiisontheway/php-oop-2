@@ -11,9 +11,9 @@ class FoodCat extends CatProduct{
     }
     function get_info(){
         parent::get_info();
-        echo 
+        return 
         'Tipologia di Mangiare' .$this->food_type. '<br>' .
-        'Prezzo del Mangiare' .$this->food_price. '€' . '<br>';
+        'Prezzo del Mangiare' .$this->food_price. '€/kg' . '<br>';
     }
 }
     

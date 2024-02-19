@@ -13,7 +13,7 @@ class ToysCat extends CatProduct{
     }
     function get_info(){
         parent::get_info();
-        echo 
+        return 
         'Tipo di Gioco: ' .$this->Toys_name. '<br>' .
         'Tipologia di Materiale: ' .$this->material. '<br>' .
         'Prezzo del Gioco: ' .$this->durability. '<br>';

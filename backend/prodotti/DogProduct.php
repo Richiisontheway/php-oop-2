@@ -8,7 +8,7 @@ class DogProduct extends Product {
     }
     function get_info(){
         parent::get_info();
-        echo 'Per: '.DogProduct::$animal. '<br>';
+        return 'Per: '.DogProduct::$animal. '<br>';
     }
 }
 
