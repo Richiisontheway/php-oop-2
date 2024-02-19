@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . './Dog.php';
+require __DIR__ . './DogProduct.php';
 class FoodDog extends DogProduct{
     public $food_type;
     public $food_price;
@@ -16,3 +16,4 @@ class FoodDog extends DogProduct{
         'Prezzo del Mangiare' .$this->food_price. '€' . '<br>';
     }
 }
+
