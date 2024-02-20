@@ -1,10 +1,10 @@
 <?php
 require_once __DIR__ . '/product.php';
-class DogProduct extends Product {
+trait DogProduct {
     public static $animal = 'Dog';
     function get_info(){
         parent::get_info();
-        return 'Per: '.DogProduct::$animal. '<br>';
+        echo 'Per: '.DogProduct::$animal. '<br>';
     }
 }
 

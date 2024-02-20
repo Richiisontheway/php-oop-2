@@ -1,5 +1,7 @@
 <?php
+require __DIR__ . './DogProduct.php';
 class Product {
+    use DogProduct;
     protected $id;
     public $type; // se cibo, cuccia o giochi
     public $image;
