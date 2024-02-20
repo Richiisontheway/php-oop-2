@@ -1,37 +1,40 @@
-<?php
-require_once __DIR__.'./prodotti/Product.php';
-require_once __DIR__ . './prodotti/DogProduct.php';
-require_once __DIR__ . './prodotti/CatProduct.php';
-require_once __DIR__ . './prodotti/FoodDog.php';
-require_once __DIR__ . './prodotti/FoodCat.php';
-require_once __DIR__ . './prodotti/ToysCat.php';
-require_once __DIR__ . './prodotti/ToysDog.php';
-require_once __DIR__ . './prodotti/DogHouse.php';
+<?php 
+require_once __DIR__ . '/prodotti/Product.php';
+require_once __DIR__ . '/prodotti/toys.php';
+require_once __DIR__ . '/prodotti/PetBed.php';
+require_once __DIR__ . '/prodotti/Food.php';
+
+
 
 
 try{
-$product_one = new ToysDog(1,'Gioco','data:image/jpeg;base64,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',
-'Maialino','material','alta',5.99);
-$productsArray[] = $product_one;
+    $product = new Product('cat',2,'collare','data:image/jpeg;base64,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',
+    12.87,88,'Collare per Gatti molto carino e coccoloso',1);
+
+}catch(Exception $e){
+    
+    echo '<h3 class="fw-bold text-center my-3" style="color: red;">'.$e->getMessage().'</h3>';
+    
 }
-catch (Exception $e) {
-    // Viene eseguito nel caso in cui si verifichi l'errore
-    echo '<h4 style="color: red;">Valore prezzo prodotto non valido!</h4>';
-}
-echo $product_one->get_info();
+//var_dump($product);
+$products_array[] = $product;
 
- $product_two = new FoodCat(2,'cibo','https://www.my-personaltrainer.it/2021/04/13/cibo-secco-per-il-gatto-orig.jpeg','Croccantini','12');
-echo $product_two->get_info();
+$product_one = new Toys('cat',2,'collare','cc',12.87,88,'lorem',1,'oro','high');
+//var_dump($product_one, $product_one->get_type());
+$products_array[] = $product_one;
 
-$product_three = new DogHouse(3,'Cuccia','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYnq4spOtYCemOCrxeqfLMHs5BlJ1jKQ80XQ&usqp=CAU',255,105,555.98);
- echo $product_three->get_info();
+$product_two= new PetBed('dog',48,'cuccia','cc',4785,78,'aaa',8,47,78,'very well');
 
- $productsArray[] = $product_two;
- $productsArray[] = $product_three;
+//var_dump($product_two, $product_two ->get_size());
+$products_array[] = $product_two;
 
- var_dump($productsArray);
+$product_three = new Food('dog',48,'cuccia','cc',4785,78,'aaa',8,'very good', 12);
+
+$products_array[] = $product_three;
+
+var_dump($products_array);
 ?>
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -51,29 +54,68 @@ $product_three = new DogHouse(3,'Cuccia','https://encrypted-tbn0.gstatic.com/ima
     <main>
         <div class="container">
             <div class="d-flex flex-wrap">
-            <?php foreach ($productsArray as $singleProduct) { ?>
+            <?php foreach ($products_array as $single_product) { ?>
 
-                <div class="card flex-grow-1">
-                    <div class="img_container">
-                        <img src="<?php echo $singleProduct-> image ?>" alt="non disponibile">
+                <div class="flex-grow-1">
+                    <div class="">
+                        <img src="<?php echo $single_product-> image ?>" alt="non disponibile">
                     </div>
                     <div>
                         <h3 class="m-0">
-                            <?php echo $singleProduct-> type ?>
+                            <?php 
+                            echo $single_product-> animal;
+                            if($single_product->animal == 'dog'){
+                                echo '<i class="fa-solid fa-dog"></i>';
+                            }else{
+                                echo '<i class="fa-solid fa-cat"></i>';
+                            }
+
+                            ?>
                         </h3>
-                        
+                        <div>
+                            <?php
+                                echo 'Nome Prodotto: '. $single_product-> name 
+                            ?>
+                        </div><div>
+                            <?php
+                                echo 'Descrizione Prodotto: '. $single_product-> description 
+                            ?>
+                        </div><div>
+                            <?php
+                                echo 'Valutazione: '. $single_product-> raiting .'/10'; 
+                            ?>
+                        </div>
+                        </div><div>
+                            <?php
+                                if (isset ($single_product->durability) && 
+                                ($single_product->material)) {
+
+                                    echo $single_product-> durability ;
+                                    echo $single_product-> material ;
+                                    //echo $single_product-> type;
+
+                                }elseif
+                                (isset ($single_product->confort) && 
+                                ($single_product->height) && 
+                                ($single_product->width)){
+
+                                    echo $single_product->confort;
+                                    echo $single_product->height;
+                                    echo $single_product->width;
+
+                                }elseif
+                                (isset ($single_product->quality) && 
+                                ($single_product->weight)){
+
+                                    echo $single_product->quality;
+                                    echo $single_product->weight;
+                                    
+                                }
+                            ?>
+                        </div>
                         <h2 class=" text-success ">
-                            <?php echo 'Prezzo : ' .$singleProduct->price. '€' ?>
+                            <?php echo 'Prezzo : ' .$single_product-> price. '€' ?>
                         </h2>
-                        <span>
-                            <!-- <?php
-                            // if($singleProduct->category == 1){
-                            //     echo '<i class="fa-solid fa-dog"></i>';
-                            // }else{
-                            //     echo '<i class="fa-solid fa-cat"></i>';
-                            // }
-                            ?> -->
-                        </span>
                     </div>
                 </div>
 
@@ -83,3 +125,5 @@ $product_three = new DogHouse(3,'Cuccia','https://encrypted-tbn0.gstatic.com/ima
     </main>
 </body>
 </html>
+
+

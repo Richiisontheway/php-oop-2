@@ -1,33 +1,50 @@
 <?php
-require __DIR__ . './DogProduct.php';
+require_once __DIR__ . './../traits/Price.php';
+
 class Product {
-    use DogProduct;
-    protected $id;
-    public $type; // se cibo, cuccia o giochi
+    public $animal;
+    public $id;
+    public $name;
     public $image;
+    use Price;
+    public $quantity;
+    public $description;
+    public $raiting;
+
     function __construct
     (
+        string $animal,
         int $id,
-        string $type,
-        string $image
+        string $name,
+        string $image,
+        float $price,
+        int $quantity,
+        string $description,
+        int $raiting
     )
     {
+        $this->animal = $animal;
         $this->id = $id;
+        $this->name = $name;
         $this->image = $image;
-        $this->type = $type;
-
+        if (is_numeric($price)) {
+            $this->price = $price;
+        }else{
+            throw new Exception('Error type price is not numeric');
+        }
+        if (is_int($quantity)) {
+            $this->quantity = $quantity;
+        }else{
+            throw new Exception('Error type quantity is not int');
+        }
+        $this->description = $description;
+        if ($raiting >= 0) {
+            $this->raiting = $raiting;
+        }else{
+            throw new Exception('Error type raiting cannot be negative');
+        }
     }
-    function get_id(){
-        return $this->id;
-    }
-    function get_type(){
-        $this->type;
-    }
-    function get_info(){
-        echo 
-        'Identificativo prodotto: '. $this->id. '<br>'.
-        'Tipo di prodotto desiderato: ' .$this->type .'<br>' ;
-    }
+    
 }
 
 
