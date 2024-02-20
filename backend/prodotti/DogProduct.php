@@ -1,10 +1,11 @@
 <?php
-require_once __DIR__ . '/product.php';
+//require_once __DIR__ . './Product.php';
 trait DogProduct {
     public static $animal = 'Dog';
     function get_info(){
-        parent::get_info();
-        echo 'Per: '.DogProduct::$animal. '<br>';
+        $parentIntfo = parent::get_info();
+        $sonInfo = 'Per: '.DogProduct::$animal. '<br>';
+        return parent::get_info().' '.$sonInfo;
     }
 }
 

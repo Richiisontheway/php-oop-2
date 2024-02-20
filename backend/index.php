@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'./prodotti/Product.php';
-//require_once __DIR__ . './prodotti/DogProduct.php';
-//require_once __DIR__ . './prodotti/CatProduct.php';
+require_once __DIR__ . './prodotti/DogProduct.php';
+require_once __DIR__ . './prodotti/CatProduct.php';
 require_once __DIR__ . './prodotti/FoodDog.php';
 require_once __DIR__ . './prodotti/FoodCat.php';
 require_once __DIR__ . './prodotti/ToysCat.php';

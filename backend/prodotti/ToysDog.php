@@ -1,6 +1,7 @@
 <?php
+require_once __DIR__ . './DogProduct.php';
 
-class ToysDog {
+class ToysDog extends Product{
     use DogProduct;
     public $Toys_name;
     public $material;
@@ -8,6 +9,7 @@ class ToysDog {
     public $price;
     function __construct($id,$type,$image,string $Toys_name, string $material, string $durability,float $price)
     {
+        parent::__construct($id,$type,$image);
         $this->Toys_name =  $Toys_name;
         $this->material =  $material;
         $this->durability = $durability;

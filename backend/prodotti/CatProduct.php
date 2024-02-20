@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/product.php';
+require_once __DIR__ . './Product.php';
 class CatProduct extends Product {
     public static $animal = 'Cat';
     function get_info(){

@@ -1,5 +1,5 @@
 <?php
-//require __DIR__ . './DogProduct.php';
+require_once __DIR__ . './DogProduct.php';
 class FoodDog{
     use DogProduct;
     public $food_type;
